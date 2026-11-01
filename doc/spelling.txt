@@ -1,0 +1,49 @@
+INTRODUCTION                             *spelling.vim* *vim-spelling*
+                                                        _                   ~
+                                                 __   _(_)_ __ ___          ~
+                                                 \ \ / / | '_ ` _ \ _____   ~
+                                                  \ V /| | | | | | |_____|  ~
+                                                   \_/ |_|_| |_| |_|        ~
+                                                                            ~
+                                                        _ _ _               ~
+                                         ___ _ __   ___| | (_)_ __   __ _   ~
+                                        / __| '_ \ / _ \ | | | '_ \ / _` |  ~
+                                        \__ \ |_) |  __/ | | | | | | (_| |  ~
+                                        |___/ .__/ \___|_|_|_|_| |_|\__, |  ~
+                                            |_|                     |___/   ~
+                                                                            ~
+              Spell checking helpers for Vim editor          by @diacus
+
+Mappings to turn the spell checking on and off quickly, and to correct
+the words flagged as misspelled.  This plugin defines no commands and no
+global variables.
+
+==============================================================================
+CONTENTS                                              *spelling-contents*
+
+  Normal mode mappings .......................... |spelling-mappings|
+==============================================================================
+
+NORMAL MODE MAPPINGS                                  *spelling-mappings*
+
+<F2>        Toggles spell checking.
+
+            When the check is turned ON, the 'cursorline' is disabled,
+            the syntax highlighting is turned off, so the squiggly marks
+            of the misspelled words are not affected by colors, and
+            <Tab> is mapped in both, normal and insert mode, to show
+            the completion menu with the suggestions for the word under
+            or before the cursor.
+
+            When the check is turned OFF, everything is restored.
+
+            Note: if the buffer is 'readonly', regardless of the current
+            state, spelling is turned off and 'cursorline' is enabled.
+
+<Leader><Space>
+            Shows the spelling suggestions for the word before the
+            cursor.  Internally, this mapping moves one character to the
+            right, and triggers insert-mode completion with <C-X><C-S>,
+            see |ins-completion-menu|.
+
+ vim:tw=78:ts=8:ft=help:norl:
